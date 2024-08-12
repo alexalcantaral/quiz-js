@@ -1,18 +1,53 @@
+//variaveis
+
 const $startGameButton = document.querySelector(".start-quiz");
 const $questionsContainer = document.querySelector(".questions-container");
 const $answersContainer = document.querySelector(".answers-container");
 const $questionText = document.querySelector(".question");
 const $nextQuestionButton = document.querySelector(".next-question");
-
-$startGameButton.addEventListener("click", startGame);
-$nextQuestionButton.addEventListener("click", displayNextQuestion);
+const $infoQuestion = document.querySelector(".infoQuestion");
+const $numeroQuestoes = document.querySelector("#numeroQuestoes");
+const $acertos = document.querySelector("#acertos");
+const $tituloInicio = document.querySelector("#tituloInicio");
+const $resultados = document.querySelector(".resultados");
+//const $ = document.querySelector("");
 
 let currentQuestionIndex = 0;
 let totalCorrect = 0;
+let totalQuestoessRespondidas = 0;
+localStorage.getItem("questoesRespondidas") !== null
+  ? JSON.parse(localStorage.getItem("questoesRespondidas"))
+  : [];
+let questions = [];
+
+//eventos
+
+$startGameButton.addEventListener("click", startGame);
+$nextQuestionButton.addEventListener("click", displayNextQuestion);
+$resultados.addEventListener("click",)
+window.addEventListener("DOMContentLoaded", fetchJSON);
+
+//funcoes
+
+function 
+
+async function fetchJSON() {
+  try {
+    let data = await fetch("./data/questions.json");
+
+    let dados = await data.json();
+    questions = dados.slice(0, 10);
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 function startGame() {
   $startGameButton.classList.add("hide");
   $questionsContainer.classList.remove("hide");
+  $infoQuestion.style.display = "flex";
+  $tituloInicio.classList.add("hide");
+  $resultados.classList.add("hide");
   displayNextQuestion();
 }
 
@@ -23,13 +58,16 @@ function displayNextQuestion() {
     return finishGame();
   }
 
+  $numeroQuestoes.textContent = `${currentQuestionIndex + 1}/${
+    questions.length
+  }`;
   $questionText.textContent = questions[currentQuestionIndex].question;
-  questions[currentQuestionIndex].answers.forEach((answer) => {
+  questions[currentQuestionIndex].options.forEach((answer) => {
     const newAnswer = document.createElement("button");
     newAnswer.classList.add("button", "answer");
-    newAnswer.textContent = answer.text;
-    if (answer.correct) {
-      newAnswer.dataset.correct = answer.correct;
+    newAnswer.textContent = answer;
+    if (questions[currentQuestionIndex].answer === answer) {
+      newAnswer.dataset.correct = questions[currentQuestionIndex].answer;
     }
     $answersContainer.appendChild(newAnswer);
 
@@ -51,6 +89,7 @@ function selectAnswer(event) {
 
   if (answerClicked.dataset.correct) {
     totalCorrect++;
+    $acertos.textContent = `Acertos : ${totalCorrect}`;
   }
 
   document.querySelectorAll(".answer").forEach((button) => {
@@ -66,25 +105,11 @@ function selectAnswer(event) {
   currentQuestionIndex++;
 }
 
-function finishGame() {
-  const totalQuestions = questions.length;
-  const performance = Math.floor((totalCorrect * 100) / totalQuestions);
+function finishGame(container, acertos, totalQuestions) {
 
-  let messege = "";
+    container.innerHTML = "";
 
-  switch (true) {
-    case performance >= 90:
-      message = "Excelente :)";
-      break;
-    case performance >= 70:
-      message = "Muito bom :)";
-      break;
-    case performance >= 50:
-      message = "Bom";
-      break;
-    default:
-      message = "Pode melhorar :(";
-  }
+    const 
 
   $questionsContainer.innerHTML = `
         <p class="final-message">
@@ -96,70 +121,3 @@ function finishGame() {
         </button>
     `;
 }
-
-const questions = [
-  {
-    question: "Dentro de qual elemento HTML colocamos o JavaScript?",
-    answers: [
-      { text: "<javascript>", correct: false },
-      { text: "<js>", correct: false },
-      { text: "<script>", correct: true },
-      { text: "<scripiting>", correct: false },
-    ],
-  },
-  {
-    question: "Onde é o lugar correto para adicionar o JavaScript?",
-    answers: [
-      { text: "Tanto no <head> quanto no <body> está correto", correct: true },
-      { text: "No <body>", correct: false },
-      { text: "No <head>", correct: false },
-      { text: "Em outro lugar", correct: false },
-    ],
-  },
-  {
-    question: "O que é JavaScript?",
-    answers: [
-      { text: "Uma linguagem de marcação", correct: false },
-      { text: "Uma linguagem de programação", correct: true },
-      { text: "Um banco de dados", correct: false },
-      { text: "Um sistema operacional", correct: false },
-    ],
-  },
-  {
-    question: "O que significa NaN em JavaScript?",
-    answers: [
-      { text: "Not a Number", correct: true },
-      { text: "Not a Null", correct: false },
-      { text: "No Action Needed", correct: false },
-      { text: "None of the Above", correct: false },
-    ],
-  },
-  {
-    question: "Qual é a saída do código console.log(2 + '2');?",
-    answers: [
-      { text: "4", correct: false },
-      { text: "22", correct: true },
-      { text: "NaN", correct: false },
-      { text: "Erro", correct: false },
-    ],
-  },
-  {
-    question: "Como você pode verificar o tipo de uma variável em JavaScript?",
-    answers: [
-      { text: "typeof", correct: true },
-      { text: "varType", correct: false },
-      { text: "getType", correct: false },
-      { text: "checkType", correct: false },
-    ],
-  },
-  {
-    question:
-      "Qual das seguintes opções não é uma estrutura de controle em JavaScript?",
-    answers: [
-      { text: "for", correct: false },
-      { text: "while", correct: false },
-      { text: "loop", correct: true },
-      { text: "Nenhuma das alternativas", correct: false },
-    ],
-  },
-];

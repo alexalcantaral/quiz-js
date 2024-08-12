@@ -30,6 +30,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 }
 
 .questions-container {
@@ -54,14 +55,10 @@ body {
   width: 100%;
 }
 
-.next-question {
-  margin-top: 32px;
-}
-
 .button {
   background-color: lightseagreen;
   color: #fffafa;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: bold;
   border: 0;
   border-radius: 6px;
@@ -101,4 +98,26 @@ body {
   color: red;
   border: 1px solid gray;
   background-color: #fffafa;
+}
+
+.infoQuestion {
+  display: none;
+  justify-content: space-between;
+  color: gray;
+  width: 100%;
+  span {
+    font-size: 13px;
+    font-weight: 550;
+  }
+}
+
+.controls-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#tituloInicio {
+  color: #121212;
+  font-size: 30px;
 }

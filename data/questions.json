@@ -1,0 +1,484 @@
+[
+  {
+    "id": 1,
+    "question": "Qual linguagem é conhecida como a linguagem da web?",
+    "options": ["Python", "C++", "JavaScript", "Java"],
+    "answer": "JavaScript"
+  },
+  {
+    "id": 2,
+    "question": "Qual a saída do seguinte código JavaScript: console.log(typeof null);",
+    "options": ["null", "object", "undefined", "number"],
+    "answer": "object"
+  },
+  {
+    "id": 3,
+    "question": "Qual a função de uma variável no código?",
+    "options": [
+      "Armazenar dados",
+      "Executar loops",
+      "Definir estilo",
+      "Criar classes"
+    ],
+    "answer": "Armazenar dados"
+  },
+  {
+    "id": 4,
+    "question": "Qual dos seguintes é um banco de dados NoSQL?",
+    "options": ["MySQL", "PostgreSQL", "MongoDB", "SQLite"],
+    "answer": "MongoDB"
+  },
+  {
+    "id": 5,
+    "question": "Em HTML, qual tag é usada para criar um link?",
+    "options": ["<div>", "<p>", "<a>", "<link>"],
+    "answer": "<a>"
+  },
+  {
+    "id": 6,
+    "question": "Qual a função do CSS?",
+    "options": [
+      "Criar interatividade",
+      "Definir o estilo da página",
+      "Armazenar dados",
+      "Gerenciar servidores"
+    ],
+    "answer": "Definir o estilo da página"
+  },
+  {
+    "id": 7,
+    "question": "O que significa a sigla SQL?",
+    "options": [
+      "Structured Query Language",
+      "Simple Query Language",
+      "Structured Quick Language",
+      "Simple Quick Language"
+    ],
+    "answer": "Structured Query Language"
+  },
+  {
+    "id": 8,
+    "question": "Qual linguagem de programação é conhecida por seu uso em data science e machine learning?",
+    "options": ["Ruby", "Python", "C#", "Swift"],
+    "answer": "Python"
+  },
+  {
+    "id": 9,
+    "question": "Qual método JavaScript é usado para converter uma string em um inteiro?",
+    "options": ["parseInt()", "toInt()", "convertInt()", "stringToInt()"],
+    "answer": "parseInt()"
+  },
+  {
+    "id": 10,
+    "question": "O que significa a sigla JSON?",
+    "options": [
+      "JavaScript Object Notation",
+      "JavaScript Oriented Notation",
+      "Java Serialized Object Notation",
+      "Java Serialized Oriented Notation"
+    ],
+    "answer": "JavaScript Object Notation"
+  },
+  {
+    "id": 11,
+    "question": "Qual é a função de um servidor web?",
+    "options": [
+      "Processar dados",
+      "Armazenar arquivos",
+      "Servir páginas da web",
+      "Gerenciar redes"
+    ],
+    "answer": "Servir páginas da web"
+  },
+  {
+    "id": 12,
+    "question": "Em CSS, como você pode alterar a cor do texto?",
+    "options": ["color", "text-color", "font-color", "background-color"],
+    "answer": "color"
+  },
+  {
+    "id": 13,
+    "question": "Qual a saída do seguinte código Python: print(2 ** 3)?",
+    "options": ["6", "8", "9", "12"],
+    "answer": "8"
+  },
+  {
+    "id": 14,
+    "question": "Qual é o comando Git para criar um novo branch?",
+    "options": [
+      "git branch new_branch",
+      "git create new_branch",
+      "git new branch",
+      "git checkout new_branch"
+    ],
+    "answer": "git branch new_branch"
+  },
+  {
+    "id": 15,
+    "question": "O que faz o método Array.prototype.map() em JavaScript?",
+    "options": [
+      "Modifica o array original",
+      "Retorna um novo array",
+      "Filtra elementos do array",
+      "Adiciona elementos ao array"
+    ],
+    "answer": "Retorna um novo array"
+  },
+  {
+    "id": 16,
+    "question": "Qual linguagem é tipicamente usada para consultas em bancos de dados?",
+    "options": ["Java", "C#", "SQL", "PHP"],
+    "answer": "SQL"
+  },
+  {
+    "id": 17,
+    "question": "Qual o comando para exibir uma mensagem de alerta em JavaScript?",
+    "options": ["prompt()", "confirm()", "alert()", "message()"],
+    "answer": "alert()"
+  },
+  {
+    "id": 18,
+    "question": "Qual a saída do seguinte código JavaScript: console.log(5 == '5');",
+    "options": ["true", "false", "undefined", "null"],
+    "answer": "true"
+  },
+  {
+    "id": 19,
+    "question": "Qual é a forma correta de declarar uma variável em JavaScript?",
+    "options": ["var name;", "let name;", "const name;", "Todas as anteriores"],
+    "answer": "Todas as anteriores"
+  },
+  {
+    "id": 20,
+    "question": "Em qual linguagem de programação o operador === é usado?",
+    "options": ["Python", "Java", "C++", "JavaScript"],
+    "answer": "JavaScript"
+  },
+  {
+    "id": 21,
+    "question": "Qual é a extensão de arquivo comum para folhas de estilo em cascata?",
+    "options": [".html", ".css", ".js", ".json"],
+    "answer": ".css"
+  },
+  {
+    "id": 22,
+    "question": "Qual é o método para adicionar um elemento ao final de um array em JavaScript?",
+    "options": ["add()", "append()", "push()", "insert()"],
+    "answer": "push()"
+  },
+  {
+    "id": 23,
+    "question": "Qual é a função do doctype no HTML?",
+    "options": [
+      "Definir a versão do HTML",
+      "Linkar um arquivo CSS",
+      "Executar um script",
+      "Definir a estrutura de dados"
+    ],
+    "answer": "Definir a versão do HTML"
+  },
+  {
+    "id": 24,
+    "question": "Qual tag HTML é usada para definir um item de lista?",
+    "options": ["<ul>", "<ol>", "<li>", "<list>"],
+    "answer": "<li>"
+  },
+  {
+    "id": 25,
+    "question": "Qual propriedade CSS é usada para alterar o tamanho da fonte?",
+    "options": ["font-size", "font-weight", "text-size", "text-weight"],
+    "answer": "font-size"
+  },
+  {
+    "id": 26,
+    "question": "Qual é a saída do seguinte código JavaScript: console.log('5' + 3);",
+    "options": ["8", "53", "undefined", "error"],
+    "answer": "53"
+  },
+  {
+    "id": 27,
+    "question": "Qual é o resultado de 3 + 2 * 2 em JavaScript?",
+    "options": ["10", "7", "8", "5"],
+    "answer": "7"
+  },
+  {
+    "id": 28,
+    "question": "Qual atributo HTML é usado para definir o caminho de uma imagem?",
+    "options": ["src", "href", "link", "path"],
+    "answer": "src"
+  },
+  {
+    "id": 29,
+    "question": "Qual é a saída do seguinte código Python: print('Hello' + 'World')?",
+    "options": ["HelloWorld", "Hello World", "Hello+World", "SyntaxError"],
+    "answer": "HelloWorld"
+  },
+  {
+    "id": 30,
+    "question": "Em CSS, qual propriedade é usada para alterar a cor de fundo de um elemento?",
+    "options": ["background-color", "color", "bg-color", "background"],
+    "answer": "background-color"
+  },
+  {
+    "id": 31,
+    "question": "Qual a diferença entre == e === em JavaScript?",
+    "options": [
+      "== compara apenas valores, === compara valores e tipos",
+      "== compara valores e tipos, === compara apenas valores",
+      "== é usado para atribuição, === é usado para comparação",
+      "== e === são equivalentes"
+    ],
+    "answer": "== compara apenas valores, === compara valores e tipos"
+  },
+  {
+    "id": 32,
+    "question": "O que é uma promise em JavaScript?",
+    "options": [
+      "Um método para lidar com eventos",
+      "Uma função síncrona",
+      "Um objeto que representa a eventual conclusão ou falha de uma operação assíncrona",
+      "Uma variável global"
+    ],
+    "answer": "Um objeto que representa a eventual conclusão ou falha de uma operação assíncrona"
+  },
+  {
+    "id": 33,
+    "question": "O que é o DOM em JavaScript?",
+    "options": [
+      "Document Object Model",
+      "Data Object Model",
+      "Dynamic Object Model",
+      "Document Oriented Model"
+    ],
+    "answer": "Document Object Model"
+  },
+  {
+    "id": 34,
+    "question": "Qual é a função do método JavaScript Array.prototype.filter()?",
+    "options": [
+      "Adicionar elementos ao array",
+      "Filtrar elementos do array",
+      "Modificar elementos do array",
+      "Ordenar elementos do array"
+    ],
+    "answer": "Filtrar elementos do array"
+  },
+  {
+    "id": 35,
+    "question": "O que significa a sigla HTTP?",
+    "options": [
+      "HyperText Transfer Protocol",
+      "HyperText Transmission Protocol",
+      "HyperTransfer Text Protocol",
+      "Hyper Transmission Text Protocol"
+    ],
+    "answer": "HyperText Transfer Protocol"
+  },
+  {
+    "id": 36,
+    "question": "Qual método JavaScript é usado para remover o último elemento de um array?",
+    "options": ["pop()", "remove()", "delete()", "shift()"],
+    "answer": "pop()"
+  },
+  {
+    "id": 37,
+    "question": "Em qual linguagem de programação o operador && é usado?",
+    "options": ["Python", "Java", "C++", "JavaScript"],
+    "answer": "JavaScript"
+  },
+  {
+    "id": 38,
+    "question": "Qual é a função da tag <meta> em HTML?",
+    "options": [
+      "Adicionar estilos",
+      "Definir metadados",
+      "Incluir scripts",
+      "Criar links"
+    ],
+    "answer": "Definir metadados"
+  },
+  {
+    "id": 39,
+    "question": "Qual é o método para adicionar um elemento ao início de um array em JavaScript?",
+    "options": ["add()", "append()", "push()", "unshift()"],
+    "answer": "unshift()"
+  },
+  {
+    "id": 40,
+    "question": "Qual propriedade CSS é usada para definir a cor do fundo de um elemento?",
+    "options": ["color", "font-color", "background-color", "bg-color"],
+    "answer": "background-color"
+  },
+  {
+    "id": 41,
+    "question": "Qual é a saída do seguinte código JavaScript: console.log(5 === '5');",
+    "options": ["true", "false", "undefined", "null"],
+    "answer": "false"
+  },
+  {
+    "id": 42,
+    "question": "O que faz o método JavaScript Array.prototype.reduce()?",
+    "options": [
+      "Adiciona elementos ao array",
+      "Remove elementos do array",
+      "Filtra elementos do array",
+      "Reduz o array a um único valor"
+    ],
+    "answer": "Reduz o array a um único valor"
+  },
+  {
+    "id": 43,
+    "question": "Qual a saída do seguinte código Python: print('Python'.lower())?",
+    "options": ["python", "PYTHON", "Python", "pYTHON"],
+    "answer": "python"
+  },
+  {
+    "id": 44,
+    "question": "Qual é o comando Git para visualizar as alterações feitas no repositório?",
+    "options": ["git status", "git log", "git diff", "git show"],
+    "answer": "git status"
+  },
+  {
+    "id": 45,
+    "question": "Qual a diferença entre null e undefined em JavaScript?",
+    "options": [
+      "Ambos são equivalentes",
+      "null é um valor atribuído, undefined é uma ausência de valor",
+      "undefined é um valor atribuído, null é uma ausência de valor",
+      "Ambos representam ausência de valor"
+    ],
+    "answer": "null é um valor atribuído, undefined é uma ausência de valor"
+  },
+  {
+    "id": 46,
+    "question": "Qual método JavaScript é usado para converter uma string em letras maiúsculas?",
+    "options": [
+      "toUpperCase()",
+      "toLowerCase()",
+      "toCapitalize()",
+      "toTitleCase()"
+    ],
+    "answer": "toUpperCase()"
+  },
+  {
+    "id": 47,
+    "question": "O que faz o método JavaScript Array.prototype.forEach()?",
+    "options": [
+      "Modifica o array original",
+      "Retorna um novo array",
+      "Executa uma função para cada elemento do array",
+      "Filtra elementos do array"
+    ],
+    "answer": "Executa uma função para cada elemento do array"
+  },
+  {
+    "id": 48,
+    "question": "Qual é a função do operador % em JavaScript?",
+    "options": ["Adição", "Subtração", "Multiplicação", "Resto da divisão"],
+    "answer": "Resto da divisão"
+  },
+  {
+    "id": 49,
+    "question": "Qual é a saída do seguinte código JavaScript: console.log(typeof NaN);",
+    "options": ["number", "undefined", "null", "NaN"],
+    "answer": "number"
+  },
+  {
+    "id": 50,
+    "question": "Qual é a função do método JavaScript JSON.stringify()?",
+    "options": [
+      "Converter um objeto JavaScript em uma string JSON",
+      "Converter uma string JSON em um objeto JavaScript",
+      "Parsear uma string JSON",
+      "Validar uma string JSON"
+    ],
+    "answer": "Converter um objeto JavaScript em uma string JSON"
+  },
+  {
+    "id": 51,
+    "question": "Qual é a saída do seguinte código Python: print(len('Hello World'))?",
+    "options": ["11", "12", "10", "13"],
+    "answer": "11"
+  },
+  {
+    "id": 52,
+    "question": "Qual é o comando Git para adicionar todos os arquivos ao próximo commit?",
+    "options": ["git add .", "git commit -m", "git push origin", "git merge"],
+    "answer": "git add ."
+  },
+  {
+    "id": 53,
+    "question": "Qual método JavaScript é usado para remover o primeiro elemento de um array?",
+    "options": ["shift()", "unshift()", "pop()", "splice()"],
+    "answer": "shift()"
+  },
+  {
+    "id": 54,
+    "question": "Qual é a saída do seguinte código Python: print(10 // 3)?",
+    "options": ["3", "3.33", "3.0", "2"],
+    "answer": "3"
+  },
+  {
+    "id": 55,
+    "question": "Qual propriedade CSS é usada para definir o espaçamento entre as linhas de texto?",
+    "options": ["letter-spacing", "text-spacing", "line-height", "spacing"],
+    "answer": "line-height"
+  },
+  {
+    "id": 56,
+    "question": "Qual é a função do método JavaScript Array.prototype.concat()?",
+    "options": [
+      "Adicionar elementos ao array",
+      "Concatenar arrays",
+      "Filtrar elementos do array",
+      "Ordenar elementos do array"
+    ],
+    "answer": "Concatenar arrays"
+  },
+  {
+    "id": 57,
+    "question": "Qual é a saída do seguinte código JavaScript: console.log('Hello'.charAt(1));",
+    "options": ["H", "e", "l", "o"],
+    "answer": "e"
+  },
+  {
+    "id": 58,
+    "question": "Qual é a função do método JavaScript Array.prototype.slice()?",
+    "options": [
+      "Adicionar elementos ao array",
+      "Remover elementos do array",
+      "Retornar uma cópia superficial de uma parte do array",
+      "Ordenar elementos do array"
+    ],
+    "answer": "Retornar uma cópia superficial de uma parte do array"
+  },
+  {
+    "id": 59,
+    "question": "Qual método JavaScript é usado para encontrar o índice de um elemento em um array?",
+    "options": ["find()", "indexOf()", "filter()", "map()"],
+    "answer": "indexOf()"
+  },
+  {
+    "id": 60,
+    "question": "Qual é a saída do seguinte código Python: print('apple'.upper())?",
+    "options": ["APPLE", "apple", "Apple", "ApPlE"],
+    "answer": "APPLE"
+  },
+  {
+    "id": 61,
+    "question": "Qual é a função do operador || em JavaScript?",
+    "options": ["E lógico", "OU lógico", "Não lógico", "XOR lógico"],
+    "answer": "OU lógico"
+  },
+  {
+    "id": 62,
+    "question": "Qual é a função do método JavaScript String.prototype.trim()?",
+    "options": [
+      "Adicionar espaços no início e no final da string",
+      "Remover espaços do início e do final da string",
+      "Converter a string em maiúsculas",
+      "Converter a string em minúsculas"
+    ],
+    "answer": "Remover espaços do início e do final da string"
+  }
+]

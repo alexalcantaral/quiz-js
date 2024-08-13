@@ -2,6 +2,8 @@
 
 import { Quiz } from "./POO/quiz.js";
 import { fetchJSON } from "./functions/fetchJSON.js";
+import selecionaQuestoes from "./functions/selecionaQuestoes.js";
+import verificarUpdateQuestions from "./functions/verificarUpdateQuestions.js";
 
 //variaveis DOM
 
@@ -9,6 +11,7 @@ const $startGameButton = document.querySelector(".start-quiz");
 const $nextQuestionButton = document.querySelector(".next-question");
 const $resultados = document.querySelector(".resultados");
 const $container = document.querySelector(".container");
+const $infoUpdateQuestion = document.querySelector("#infoUpdateQuestion");
 //const $ = document.querySelector("");
 
 //variaveis
@@ -45,7 +48,17 @@ $resultados.addEventListener("click", () => {
 });
 
 window.addEventListener("DOMContentLoaded", async () => {
-  myQuiz.questions = await fetchJSON();
+  myQuiz.questions = selecionaQuestoes(
+    await fetchJSON(),
+    totalQuestoesRespondidas
+  );
+  let verificarUpdate = verificarUpdateQuestions();
+  if (!verificarUpdate.update) {
+    $startGameButton.classList.add("hide");
+    $infoUpdateQuestion.textContent = `Proxima atualização em ${
+      24 - Math.floor(verificarUpdate.diferencaHoras)
+    } horas`;
+  }
 });
 
 window.addEventListener("beforeunload", () => {

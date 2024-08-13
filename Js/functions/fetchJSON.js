@@ -3,7 +3,7 @@ export async function fetchJSON() {
     let data = await fetch("./data/questions.json");
 
     let dados = await data.json();
-    return dados.slice(0, 10);
+    return dados;
   } catch (error) {
     console.log(error);
   }

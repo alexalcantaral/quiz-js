@@ -1,3 +1,5 @@
+import EmbaralharArray from "../functions/embaralharArray.js";
+
 const $startGameButton = document.querySelector(".start-quiz");
 const $questionsContainer = document.querySelector(".questions-container");
 const $answersContainer = document.querySelector(".answers-container");
@@ -48,7 +50,11 @@ export class Quiz {
     $questionText.textContent =
       this.questions[this.currentQuestionIndex].question;
 
-    this.questions[this.currentQuestionIndex].options.forEach((answer) => {
+    let opcoesEmbaralhadas = EmbaralharArray(
+      this.questions[this.currentQuestionIndex].options
+    );
+
+    opcoesEmbaralhadas.forEach((answer) => {
       const newAnswer = document.createElement("button");
       newAnswer.classList.add("button", "answer");
       newAnswer.textContent = answer;

@@ -11,6 +11,8 @@ const $acertos = document.querySelector("#acertos");
 const $tituloInicio = document.querySelector("#tituloInicio");
 const $resultados = document.querySelector(".resultados");
 const $container = document.querySelector(".container");
+const $audioErro = document.querySelector("#audioErro");
+const $audioAcerto = document.querySelector("#audioAcerto");
 //const $ = document.querySelector("");
 
 let currentQuestionIndex =
@@ -50,7 +52,6 @@ window.addEventListener("beforeunload", () => {
     "questoesRespondidas",
     JSON.stringify(totalQuestoesRespondidas)
   );
-  localStorage.setItem("acertos", `${totalCorrect}`);
 });
 
 //funcoes
@@ -113,8 +114,12 @@ function selectAnswer(event) {
   const answerClicked = event.target;
 
   if (answerClicked.dataset.correct) {
+    $audioAcerto.play();
     totalCorrect++;
+    localStorage.setItem("acertos", `${totalCorrect}`);
     $acertos.textContent = `Acertos : ${totalCorrect}`;
+  } else {
+    $audioErro.play();
   }
 
   document.querySelectorAll(".answer").forEach((button) => {
@@ -154,6 +159,9 @@ function finishGame(container, acertos, totalQuestions) {
   const qtdQuestoes = document.createElement("strong");
   qtdQuestoes.textContent = `${totalQuestions}`;
 
+  const divBtnResultado = document.createElement("div");
+  divBtnResultado.className = "divBtnResultado";
+
   const btnSair = document.createElement("button");
   btnSair.className = "button";
   btnSair.textContent = "Sair do quiz";
@@ -161,13 +169,32 @@ function finishGame(container, acertos, totalQuestions) {
     window.location.reload();
   });
 
+  const btnCompartilhar = document.createElement("button");
+  btnCompartilhar.className = "button";
+  btnCompartilhar.textContent = "Compartilhar";
+  btnCompartilhar.addEventListener("click", () => {
+    window.open(
+      `https://twitter.com/intent/tweet?text=Meu%20resultado%20no%20quiz%20:%20${
+        acertos > 0 ? acertos : ""
+      }%20${
+        acertos === 0 ? "nenhum%20acerto" : acertos === 1 ? "acerto" : "acertos"
+      }%20de%20${totalQuestions}%20questões.%20Vejam%20quanto%20vocês%20conseguem%20&url=https://project-quiz-three.vercel.app/`,
+      "_blank"
+    );
+  });
+
+  const iconeTwitter = document.createElement("i");
+  iconeTwitter.className = "bx bxl-twitter";
+
   divResultado.appendChild(titulo);
   divResultado.appendChild(tituloAcertos);
   divResultado.appendChild(qtdAcertos);
   divResultado.appendChild(tituloQtdQuestoes);
   divResultado.appendChild(qtdQuestoes);
-
-  divResultado.appendChild(btnSair);
+  btnCompartilhar.appendChild(iconeTwitter);
+  divBtnResultado.appendChild(btnCompartilhar);
+  divBtnResultado.appendChild(btnSair);
+  divResultado.appendChild(divBtnResultado);
 
   container.appendChild(divResultado);
 }

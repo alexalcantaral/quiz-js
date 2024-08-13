@@ -10,26 +10,50 @@ const $numeroQuestoes = document.querySelector("#numeroQuestoes");
 const $acertos = document.querySelector("#acertos");
 const $tituloInicio = document.querySelector("#tituloInicio");
 const $resultados = document.querySelector(".resultados");
+const $container = document.querySelector(".container");
 //const $ = document.querySelector("");
 
-let currentQuestionIndex = 0;
+let currentQuestionIndex =
+  localStorage.getItem("currentQuestion") !== null
+    ? Number(localStorage.getItem("currentQuestion"))
+    : 0;
 let totalCorrect = 0;
-let totalQuestoessRespondidas = 0;
-localStorage.getItem("questoesRespondidas") !== null
-  ? JSON.parse(localStorage.getItem("questoesRespondidas"))
-  : [];
+let totalQuestoesRespondidas =
+  localStorage.getItem("questoesRespondidas") !== null
+    ? JSON.parse(localStorage.getItem("questoesRespondidas"))
+    : [];
 let questions = [];
 
 //eventos
 
 $startGameButton.addEventListener("click", startGame);
 $nextQuestionButton.addEventListener("click", displayNextQuestion);
-$resultados.addEventListener("click",)
+$resultados.addEventListener("click", () => {
+  finishGame(
+    $container,
+    localStorage.getItem("acertos") !== null
+      ? Number(localStorage.getItem("acertos"))
+      : 0,
+    totalQuestoesRespondidas.length
+  );
+});
 window.addEventListener("DOMContentLoaded", fetchJSON);
+window.addEventListener("beforeunload", () => {
+  if (currentQuestionIndex === 10) {
+    localStorage.setItem("lastUpdate", new Date().toISOString());
+    localStorage.setItem("currentQuestion", `${0}`);
+  } else {
+    localStorage.setItem("currentQuestion", `${currentQuestionIndex}`);
+  }
+
+  localStorage.setItem(
+    "questoesRespondidas",
+    JSON.stringify(totalQuestoesRespondidas)
+  );
+  localStorage.setItem("acertos", `${totalCorrect}`);
+});
 
 //funcoes
-
-function 
 
 async function fetchJSON() {
   try {
@@ -55,7 +79,8 @@ function displayNextQuestion() {
   resetState();
 
   if (questions.length === currentQuestionIndex) {
-    return finishGame();
+    $infoQuestion.style.display = "none";
+    return finishGame($questionsContainer, totalCorrect, questions.length);
   }
 
   $numeroQuestoes.textContent = `${currentQuestionIndex + 1}/${
@@ -102,22 +127,47 @@ function selectAnswer(event) {
     button.disabled = true;
   });
   $nextQuestionButton.classList.remove("hide");
+  totalQuestoesRespondidas.push(questions[currentQuestionIndex]);
   currentQuestionIndex++;
 }
 
 function finishGame(container, acertos, totalQuestions) {
+  container.innerHTML = "";
 
-    container.innerHTML = "";
+  const divResultado = document.createElement("div");
+  divResultado.className = "divResultado";
 
-    const 
+  const titulo = document.createElement("h1");
+  titulo.textContent = "Resultado";
 
-  $questionsContainer.innerHTML = `
-        <p class="final-message">
-            Você acertou ${totalCorrect} de ${totalQuestions} questões!
-            <span>Resultado: ${message}</span>
-        </p>
-        <button onclick=window,location.reload() class="button">
-            Refazer teste
-        </button>
-    `;
+  const tituloAcertos = document.createElement("p");
+  tituloAcertos.className = "final-message";
+  tituloAcertos.textContent = `Acertos`;
+
+  const qtdAcertos = document.createElement("strong");
+  qtdAcertos.textContent = `${acertos}`;
+
+  const tituloQtdQuestoes = document.createElement("p");
+  tituloQtdQuestoes.className = "final-message";
+  tituloQtdQuestoes.textContent = `Questões totais`;
+
+  const qtdQuestoes = document.createElement("strong");
+  qtdQuestoes.textContent = `${totalQuestions}`;
+
+  const btnSair = document.createElement("button");
+  btnSair.className = "button";
+  btnSair.textContent = "Sair do quiz";
+  btnSair.addEventListener("click", () => {
+    window.location.reload();
+  });
+
+  divResultado.appendChild(titulo);
+  divResultado.appendChild(tituloAcertos);
+  divResultado.appendChild(qtdAcertos);
+  divResultado.appendChild(tituloQtdQuestoes);
+  divResultado.appendChild(qtdQuestoes);
+
+  divResultado.appendChild(btnSair);
+
+  container.appendChild(divResultado);
 }

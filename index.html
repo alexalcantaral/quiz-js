@@ -16,17 +16,22 @@
     />
   </head>
   <body>
+    <!-- Seção principal do conteúdo -->
     <section class="container">
+      <!-- Título do quiz -->
       <h1 id="tituloInicio">Quiz da programação</h1>
       <div class="infoQuestion">
-        <span id="numeroQuestoes"></span>
-        <span id="acertos"></span>
+        <span id="numeroQuestoes"></span> <!-- Mostra o número da questão -->
+        <span id="acertos"></span> <!-- Exibe o número de acertos do usuário -->
       </div>
+      <!--Container para as perguntas e respostas, inicialmente oculto -->
       <div class="questions-container hide">
-        <span class="question"></span>
-        <div class="answers-container"></div>
+        <span class="question"></span> <!-- Exibe a pergunta -->
+        <div class="answers-container"></div> <!-- Container com as opções de respostas -->
       </div>
+      <!-- Exibe informações sobre a atualização da questão -->
       <strong id="infoUpdateQuestion"></strong>
+      <!-- Botões de controle para o quiz -->
       <div class="controls-container">
         <button class="start-quiz button">Começar Quiz</button>
         <button class="resultados button">Resultados</button>
@@ -34,12 +39,16 @@
       </div>
     </section>
 
+    <!-- Áudio para tocar quando o usuário errar uma resposta -->
     <audio id="audioErro" src="./assets/sons/audio.mp3"></audio>
+
+    <!-- Áudio para tocar quando o usuário acertar uma resposta -->
     <audio
       id="audioAcerto"
       src="./assets/sons/silvio-santos-certa-resposta (1).mp3"
     ></audio>
 
+    <!-- Link para o script principal do quiz -->
     <script src="./Js/main.js" type="module"></script>
   </body>
 </html>

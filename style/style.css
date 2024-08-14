@@ -1,13 +1,16 @@
+/* Zerar o padding, a margem e difinir um box-sizing como border-box para todos os elementos.*/
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+/* Difinir o cursor como pointer para os botões, indicando que eles podem ser clicáveis */
 button {
   cursor: pointer;
 }
 
+/* Estilização do corpo da página */
 body {
   background-color: #fffafa;
   color: #121212;
@@ -19,9 +22,10 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+/* Estilização do container principal */
 .container {
   width: 70vh;
-  border-radius: 6px;
+  border-radius: 6px; 
   padding: 16px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
   border: 2px solid lightseagreen;
@@ -33,6 +37,7 @@ body {
   gap: 1rem;
 }
 
+/* Estilização do container das perguntas */
 .questions-container {
   width: 100%;
   display: flex;
@@ -42,12 +47,14 @@ body {
   gap: 24px;
 }
 
+/* Estiliza a pergunta */
 .question {
   font-size: 20px;
   font-weight: 600;
   color: #121212;
 }
 
+/* Estiliza o container das respostas */
 .answers-container {
   display: flex;
   flex-direction: column;
@@ -55,6 +62,7 @@ body {
   width: 100%;
 }
 
+/* Estiliza os botões */
 .button {
   background-color: lightseagreen;
   color: #fffafa;
@@ -67,39 +75,47 @@ body {
   transition: filter 0.2s;
 }
 
+/* Estiliza os botões ao passar o mouse */
 .button:not(:disabled):hover {
   filter: brightness(0.9);
 }
 
+/* Estiliza a mensagem final */
 .final-message {
   font-size: 20px;
   text-align: center;
   color: #121212;
 }
 
+/* Estiliza a mensagem final em estado alternativo */
 .final-message {
   font-size: 15px;
   color: gray;
 }
 
+/* Estiliza as respostas desabilitadas */
 .answer:disabled {
   cursor: not-allowed;
 }
 
+/* Oculta elementos */
 .hide {
   display: none;
 }
 
+/* Estiliza a resposta correta */
 .correct {
   background-color: #049b48;
 }
 
+/* Estiliza a resposta incorreta */
 .incorrect {
   color: red;
   border: 1px solid gray;
   background-color: #fffafa;
 }
 
+/* Estiliza as informações sobre as questões */
 .infoQuestion {
   display: none;
   justify-content: space-between;
@@ -111,18 +127,21 @@ body {
   }
 }
 
+/* Estiliza o container dos controles */
 .controls-container {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
+/* Estiliza o título inicial */
 #tituloInicio {
   color: #121212;
   font-size: 35px;
   text-align: center;
 }
 
+/* Estiliza o container de resultados */
 .divResultado {
   width: 100%;
   display: flex;
@@ -142,6 +161,7 @@ body {
   }
 }
 
+/* Estiliza o container dos botões de resultado */
 .divBtnResultado {
   display: flex;
   gap: 0.5rem;
@@ -156,11 +176,13 @@ body {
   }
 }
 
+/* Estiliza a mensagem de atualização da questão */
 #infoUpdateQuestion {
   color: red;
   font-size: 13px;
 }
 
+/* Responsividade para telas com largura máxima de 615px */
 @media screen and (max-width: 615px) {
   .container {
     width: 60vh;
@@ -170,6 +192,7 @@ body {
   }
 }
 
+/* Responsividade para telas com largura máxima de 470px */
 @media screen and (max-width: 470px) {
   .container {
     width: 50vh;
@@ -191,6 +214,7 @@ body {
   }
 }
 
+/* Responsividade para telas com largura máxima de 400px */
 @media screen and (max-width: 400px) {
   .container {
     width: 43vh;

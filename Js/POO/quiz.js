@@ -1,4 +1,8 @@
+//importando arquivos
+
 import EmbaralharArray from "../functions/embaralharArray.js";
+
+//variaveis DOM
 
 const $startGameButton = document.querySelector(".start-quiz");
 const $questionsContainer = document.querySelector(".questions-container");
@@ -12,6 +16,9 @@ const $tituloInicio = document.querySelector("#tituloInicio");
 const $resultados = document.querySelector(".resultados");
 const $audioErro = document.querySelector("#audioErro");
 const $audioAcerto = document.querySelector("#audioAcerto");
+
+
+//criando a classe que vai ter os atributos e metodos do quiz
 
 export class Quiz {
   constructor(currentQuestionIndex, totalQuestoesRespondidas) {

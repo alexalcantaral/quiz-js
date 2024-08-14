@@ -25,17 +25,25 @@ let totalQuestoesRespondidas =
     ? JSON.parse(localStorage.getItem("questoesRespondidas"))
     : [];
 
+//instanciando o ojeto myQuiz a partir da classe 
+
 let myQuiz = new Quiz(currentQuestionIndex, totalQuestoesRespondidas);
 
 //eventos
+
+//evento de inicio
 
 $startGameButton.addEventListener("click", () => {
   myQuiz.startGame();
 });
 
+//evento de dispara a questao apos clicar no botao proxima questao
+
 $nextQuestionButton.addEventListener("click", () => {
   myQuiz.displayNextQuestion();
 });
+
+//evento para abrir o modal resultados
 
 $resultados.addEventListener("click", () => {
   myQuiz.finishGame(
@@ -46,6 +54,8 @@ $resultados.addEventListener("click", () => {
     myQuiz.totalQuestoesRespondidas.length
   );
 });
+
+//evento para fazer a requisição das questões que estão no JSON
 
 window.addEventListener("DOMContentLoaded", async () => {
   myQuiz.questions = selecionaQuestoes(
@@ -60,6 +70,8 @@ window.addEventListener("DOMContentLoaded", async () => {
     } horas`;
   }
 });
+
+// evento para settar os dados necessarios na local storage antes de dar reload na pagina
 
 window.addEventListener("beforeunload", () => {
   if (myQuiz.currentQuestionIndex === 10) {

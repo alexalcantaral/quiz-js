@@ -244,3 +244,24 @@ body {
     }
   }
 }
+
+/* Estiliza o rodapé da página */
+.footer {
+  font-size: smaller;
+  background-color: #31858049;
+  color: black;
+  text-align: center;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Certifique-se que o rodapé esteja sobrepondo outros elementos */
+  z-index: 10;
+  a{
+    text-decoration: none; color: black;
+  }
+  i{
+    color: black;
+  }
+  box-shadow: 2px 2px 1px black;
+}

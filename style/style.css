@@ -252,7 +252,7 @@ body {
   color: black;
   text-align: center;
   padding: 10px 0;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   /* Certifique-se que o rodapé esteja sobrepondo outros elementos */
@@ -261,7 +261,7 @@ body {
     text-decoration: none; color: black;
   }
   i{
-    color: black;
+    color: #0d1a55;
   }
   box-shadow: 2px 2px 1px black;
 }
